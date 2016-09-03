@@ -11,17 +11,17 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <!-- Bootstrap -->
-    <link href="assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="assets/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="../assets/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- jQuery custom content scroller -->
-    <link href="assets/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+    <link href="../assets/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
     <!-- Custom Theme Style -->
-    <link href="assets/build/css/custom.css" rel="stylesheet">
+    <link href="../assets/build/css/custom.css" rel="stylesheet">
     <!-- Main Dashboard -->
-    <link href="assets/css/main-dashboard.css" rel="stylesheet">
+    <link href="../assets/css/main-dashboard.css" rel="stylesheet">
 
 </head>
 
@@ -31,7 +31,7 @@
         <div class="col-md-3 left_col menu_fixed">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.html" class="site_title text-center"><img id="menu-logo" src="assets/images/otw-navbar-logo.png" alt="OTW" style="margin-left:-20px;"></a>
+                    <a href="index.html" class="site_title text-center"><img id="menu-logo" src="../assets/images/otw-navbar-logo.png" alt="OTW" style="margin-left:-20px;"></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -39,7 +39,7 @@
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="assets/images/img.jpg" alt="assets." class="img-circle profile_img">
+                        <img src="../assets/images/img.jpg" alt="assets." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <h2>Paulo Sodré</h2>
@@ -188,7 +188,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/images/img.jpg" alt="">Paulo Sodré
+                                <img src="../assets/images/img.jpg" alt="">Paulo Sodré
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -212,7 +212,7 @@
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                                        <span class="image"><img src="assets/images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="../assets/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -224,7 +224,7 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="assets/images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="../assets/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -236,7 +236,7 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="assets/images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="../assets/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -369,14 +369,14 @@
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="assets/vendors/fastclick/lib/fastclick.js"></script>
+<script src="../assets/vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
-<script src="assets/vendors/nprogress/nprogress.js"></script>
+<script src="../assets/vendors/nprogress/nprogress.js"></script>
 <!-- jQuery custom content scroller -->
-<script src="assets/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../assets/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- Custom Theme Scripts -->
-<script src="assets/build/js/custom.min.js"></script>
+<script src="../assets/build/js/custom.min.js"></script>
 </body>
 </html>
