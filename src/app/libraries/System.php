@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('Acesso Negado');
 
-class System {
+class OWP_System {
 
     protected $owp;
     public $theme = array();

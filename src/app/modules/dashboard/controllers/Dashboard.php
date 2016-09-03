@@ -8,7 +8,12 @@ class Dashboard extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('dashboard/dashboard_view');
+        $this->init();
+    }
+
+    public function init()
+    {
+        redirect('auth/login');
     }
     
 }

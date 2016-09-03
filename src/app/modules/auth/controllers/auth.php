@@ -13,7 +13,8 @@ class Auth extends CI_Controller {
 
     public function login()
     {
-        
+        // Load the auth module and show the login screen
+        $this->load->view('dashboard/dashboard_view');
     }
 
 }

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('Acesso Negado');
 
 //Load the system module retriving the get screen
 function load_module($module = null, $screen=null, $directory='dashboard')
