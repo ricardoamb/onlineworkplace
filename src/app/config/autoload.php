@@ -1,9 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('Acesso Negado');
 
-
 $autoload['packages'] = array();
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('database');
 $autoload['drivers'] = array();
 $autoload['helper'] = array('url');
 $autoload['config'] = array();

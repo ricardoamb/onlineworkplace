@@ -1,3 +1,5 @@
-<?php
+<?php $this->load->view('template/structure/header'); ?>
 
-echo 'Dashboard';
+{content}
+
+<?php $this->load->view('template/structure/footer'); ?>
