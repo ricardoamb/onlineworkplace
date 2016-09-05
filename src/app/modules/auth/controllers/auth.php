@@ -38,12 +38,6 @@ class Auth extends CI_Controller {
         }
         // Load the auth module and show the login screen
         set_theme('title','OWP | Entrar');
-        set_theme('headerinc',load_style('pnotify','assets/vendors/pnotify/dist'),false);
-        set_theme('headerinc',load_style('pnotify.buttons','assets/vendors/pnotify/dist'),false);
-        set_theme('headerinc',load_style('pnotify.nonblock','assets/vendors/pnotify/dist'),false);
-        set_theme('footerinc',load_js('pnotify','assets/vendors/pnotify/dist'),false);
-        set_theme('footerinc',load_js('pnotify.buttons','assets/vendors/pnotify/dist'),false);
-        set_theme('footerinc',load_js('pnotify.nonblock','assets/vendors/pnotify/dist'),false);
         set_theme('content', load_module('login'));
         load_template();
     }
