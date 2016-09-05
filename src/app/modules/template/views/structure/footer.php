@@ -1,15 +1,33 @@
-        <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="../assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- FastClick -->
-        <script src="../assets/vendors/fastclick/lib/fastclick.js"></script>
-        <!-- NProgress -->
-        <script src="../assets/vendors/nprogress/nprogress.js"></script>
-        <!-- jQuery custom content scroller -->
-        <script src="../assets/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-        <!-- Custom Theme Scripts -->
-        <script src="../assets/build/js/custom.min.js"></script>
+    <!-- Javascript Files -->
+{footerinc}
+    <!-- END OF Javascript Files -->
+    <!-- PNotify -->
+    <script>
+        $(document).ready(function() {
+            new PNotify({
+                title: "PNotify",
+                type: "info",
+                text: "Welcome. Try hovering over me. You can click things behind me, because I'm non-blocking.",
+                nonblock: {
+                    nonblock: true
+                },
+                addclass: 'dark',
+                styling: 'bootstrap3',
+                hide: false,
+                before_close: function(PNotify) {
+                    PNotify.update({
+                        title: PNotify.options.title + " - Enjoy your Stay",
+                        before_close: null
+                    });
 
+                    PNotify.queueRemove();
+
+                    return false;
+                }
+            });
+
+        });
+    </script>
+    <!-- /PNotify -->
     </body>
 </html>
