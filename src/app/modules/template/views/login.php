@@ -9,18 +9,19 @@
                 <form action="login" method="post" id="login-form">
                     <h1>Entrar no Sistema</h1>
                     <?php validation_er(); ?>
+                    <?php echo $this->session->flashdata('error_message');?>
                     <div class="row">
                         <div class="col-xs-1"><i class="fa fa-user fa-lg" style="margin-top:10px;"></i></div>
                         <div class="col-xs-11">
                             <input type="text" name="username" class="form-control login-input" id="login-username" placeholder="Nome de Usuário ou E-mail" />
-                            <span class="right empty-input-username hide"><small>Digite seu <strong>"Nome de Usuário"</strong> ou <strong>"E-mail"</strong> para entrar!</small></span>
+                            <span class="right empty-input-username hide"><small>O campo <strong>"Nome de Usuário ou E-mail"</strong> é obrigatório!</small></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-1"><i class="fa fa-lock fa-lg" style="margin-top:10px;"></i></div>
                         <div class="col-xs-11">
                             <input type="password" name="password" class="form-control login-input" id="login-password" placeholder="Senha" />
-                            <span class="right empty-input-password hide"><small>Sua <strong>"Senha"</strong> é necessária para entrar no sistema.</small></span>
+                            <span class="right empty-input-password hide"><small>O campo <strong>"Senha"</strong> é obrigatório.</small></span>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-dark submit block" id="login-submit" style="margin-top:10px;">Entrar</button>

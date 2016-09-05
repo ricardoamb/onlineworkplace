@@ -19,6 +19,7 @@
 .empty-input-username, .empty-input-password{
     color:#73879C;
     margin-bottom:10px;
+    margin-top:3px;
 }
 
 #login-submit{

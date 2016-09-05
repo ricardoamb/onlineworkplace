@@ -24,15 +24,18 @@ class Auth extends CI_Controller {
             $password = md5($this->input->post('password',true));
             if($this->users_model->enter($username,$password) == 'ok')
             {
+                $this->session->set_flashdata('error_message', '');
                 echo 'logado com sucesso!';
             }else{
                 if($this->users_model->enter($username,$password) == 'user')
                 {
-                    echo "Usuário Inxistente!";
+                    $this->session->set_flashdata('error_message', '<div class="login-errors" style="display:block;margin-bottom:30px;"><h3><i class="fa fa-exclamation-triangle"></i></h3><h2>USUÁRIO NÃO CADASTRADO</h2></div>');
+                    //echo "Usuário Inxistente!";
                 }
                 elseif ($this->users_model->enter($username,$password) == 'passwd')
                 {
-                    echo 'senha incorreta!';
+                    $this->session->set_flashdata('error_message', '<div class="login-errors" style="display:block;margin-bottom:30px;"><h3><i class="fa fa-exclamation-triangle"></i></h3><h2>SENHA INCORRETA</h2></div>');
+                    //echo 'senha incorreta!';
                 }
             }
         }
