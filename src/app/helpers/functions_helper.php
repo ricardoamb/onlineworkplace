@@ -137,3 +137,22 @@ function validation_er()
     }
 
 }
+
+// Verify if user is logged in the system
+function is_logged($redir=true)
+{
+    $owp =& get_instance();
+    $owp->load->library('session');
+    $user_status = $owp->session->userdata('logged');
+    if(!isset($user_status) || $user_status != true)
+    {
+        $owp->session->sess_destroy();
+        if($redir){
+            redirect('auth/login');
+        }else{
+            return false;
+        }
+    }else{
+        return true;
+    }
+}

@@ -25,7 +25,20 @@ class Auth extends CI_Controller {
             if($this->users_model->enter($username,$password) == 'ok')
             {
                 $this->session->set_flashdata('error_message', '');
-                echo 'logado com sucesso!';
+                $user = $this->users_model->get_user_by_login($username);
+                $data = array(
+                    'id'        => $user['id'],
+                    'username'  => $user['username'],
+                    'email'     => $user['email'],
+                    'name'      => $user['name'],
+                    'surname'   => $user['surname'],
+                    'fullname'  => $user['fullname'],
+                    'level'     => $user['level'],
+                    'logged'    => true
+                );
+                print_r($data);
+                $this->session->set_userdata($data);
+                redirect('dashboard');
             }else{
                 if($this->users_model->enter($username,$password) == 'user')
                 {
