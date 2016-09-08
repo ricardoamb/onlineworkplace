@@ -64,14 +64,16 @@ class Users_model extends CI_Model {
         $queryUser = $this->db->get_where('owp_users',array('id' => $id),1)->row();
         $queryPeople = $this->db->get_where('owp_people',array('user_id' => $id),1)->row();
         $queryHierarchy = $this->db->get_where('owp_hierarchy',array('user_id' => $id),1)->row();
+        $queryLevel = $this->db->get_where('owp_hierarchy_levels',array('id' => $queryHierarchy->hierarchy),1)->row();
         $user = array(
             'id' => $id,
-            'username'  => $queryUser->username,
-            'email'     => $queryUser->email,
-            'name'      => $queryPeople->name,
-            'surname'   => $queryPeople->surname,
-            'fullname'  => $queryPeople->name . ' ' . $queryPeople->surname,
-            'level'     => $queryHierarchy->hierarchy
+            'username'      => $queryUser->username,
+            'email'         => $queryUser->email,
+            'name'          => $queryPeople->name,
+            'surname'       => $queryPeople->surname,
+            'fullname'      => $queryPeople->name . ' ' . $queryPeople->surname,
+            'level'         => $queryHierarchy->hierarchy,
+            'level_name'    => $queryLevel->level_name
         );
         return $user;
     }

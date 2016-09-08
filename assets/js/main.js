@@ -32,4 +32,23 @@ $(document).ready(function(){
             $(this).next().removeClass('hide');
         }
     });
+    $('#fullscreen-btn').click(function(){
+        if($.fullscreen.isFullScreen())
+        {
+            $.fullscreen.exit();
+        }else{
+            $('body').fullscreen();
+        }
+    });
+    $('#menu_toggle').click(function(){
+        if($('body').hasClass('nav-md'))
+        {
+            $('a.site_title-lt').addClass('hide');
+            $('a.site_title').removeClass('hide');
+        }else{
+            $('a.site_title').addClass('hide');
+            $('a.site_title-lt').removeClass('hide');
+        }
+    });
+
 });

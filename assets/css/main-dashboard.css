@@ -39,3 +39,11 @@
     padding:0 0 3px 10px;
     text-align: left;
 }
+
+.quick-btn{
+    width:35px;
+    height:35px;
+    margin:5px 5px 5px 5px;
+    padding:5px;
+    border-radius: 100px;
+}

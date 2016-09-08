@@ -59,6 +59,7 @@ function init_dashboard()
     set_theme('footerinc',load_js('fastclick','assets/vendors/fastclick/lib'),false);
     set_theme('footerinc'.load_js('nprogress','assets/vendors/nprogress'),false);
     set_theme('footerinc',load_js('jquery.mCustomScrollbar.concat.min','assets/vendors/malihu-custom-scrollbar-plugin'),false);
+    set_theme('footerinc',load_js('jquery.fullscreen.min','assets/vendors/jquery.fullscreen/release'),false);
     set_theme('footerinc',load_js('custom.min','assets/build/js'),false);
     set_theme('footerinc',load_js('main'),false);
 }

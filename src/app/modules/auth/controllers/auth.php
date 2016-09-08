@@ -27,16 +27,16 @@ class Auth extends CI_Controller {
                 $this->session->set_flashdata('error_message', '');
                 $user = $this->users_model->get_user_by_login($username);
                 $data = array(
-                    'id'        => $user['id'],
-                    'username'  => $user['username'],
-                    'email'     => $user['email'],
-                    'name'      => $user['name'],
-                    'surname'   => $user['surname'],
-                    'fullname'  => $user['fullname'],
-                    'level'     => $user['level'],
-                    'logged'    => true
+                    'id'            => $user['id'],
+                    'username'      => $user['username'],
+                    'email'         => $user['email'],
+                    'name'          => $user['name'],
+                    'surname'       => $user['surname'],
+                    'fullname'      => $user['fullname'],
+                    'level'         => $user['level'],
+                    'level_name'    => $user['level_name'],
+                    'logged'        => true
                 );
-                print_r($data);
                 $this->session->set_userdata($data);
                 redirect('dashboard');
             }else{
@@ -56,6 +56,23 @@ class Auth extends CI_Controller {
         set_theme('title','OWP | Entrar');
         set_theme('content', load_module('login'));
         load_template();
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata(array(
+            'id'            => '',
+            'username'      => '',
+            'email'         => '',
+            'name'          => '',
+            'surname'       => '',
+            'fullname'      => '',
+            'level'         => '',
+            'level_name'    => '',
+            'logged'        => false
+        ));
+        $this->session->sess_destroy();
+        redirect('auth/login');
     }
 
 }
