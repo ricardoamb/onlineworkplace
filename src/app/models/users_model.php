@@ -77,4 +77,15 @@ class Users_model extends CI_Model {
         );
         return $user;
     }
+
+    public function get_by_email($email=null)
+    {
+        if($email != null)
+        {
+            $queryEmail = $this->db->get_where('owp_users',array('email' => $email),1);
+            return $queryEmail;
+        }else{
+            return false;
+        }
+    }
 }

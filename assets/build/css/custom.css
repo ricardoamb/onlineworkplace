@@ -3177,6 +3177,14 @@ a.hiddenanchor {
 #signup:target ~ .login_wrapper .login_form, #signin:target ~ .login_wrapper .registration_form {
   animation-name: fadeOutLeft; }
 
+#forgot:target ~ .login_wrapper .registration_form, #signin:target ~ .login_wrapper .login_form {
+  z-index: 22;
+  animation-name: fadeInLeft;
+  animation-delay: .1s; }
+
+#forgot:target ~ .login_wrapper .login_form, #signin:target ~ .login_wrapper .registration_form {
+  animation-name: fadeOutLeft; }
+
 .animate {
   -webkit-animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;

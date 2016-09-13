@@ -51,6 +51,7 @@ function init_dashboard()
     set_theme('headerinc',load_style('nprogress','assets/vendors/nprogress'),false);
     set_theme('headerinc',load_style('animate.min','assets/vendors/animate.css'),false);
     set_theme('headerinc',load_style('jquery.mCustomScrollbar.min','assets/vendors/malihu-custom-scrollbar-plugin'),false);
+    set_theme('headerinc',load_style('toastr.min','assets/vendors/toastr'),false);
     set_theme('headerinc',load_style('custom','assets/build/css'),false);
     set_theme('headerinc',load_style('main-dashboard'),false);
 
@@ -59,6 +60,8 @@ function init_dashboard()
     set_theme('footerinc',load_js('fastclick','assets/vendors/fastclick/lib'),false);
     set_theme('footerinc'.load_js('nprogress','assets/vendors/nprogress'),false);
     set_theme('footerinc',load_js('jquery.mCustomScrollbar.concat.min','assets/vendors/malihu-custom-scrollbar-plugin'),false);
+    set_theme('footerinc',load_js('jquery.mousewheel-3.0.6.pack','assets/vendors/fancyBox/lib'),false);
+    set_theme('footerinc',load_js('toastr.min','assets/vendors/toastr'),false);
     set_theme('footerinc',load_js('jquery.fullscreen.min','assets/vendors/jquery.fullscreen/release'),false);
     set_theme('footerinc',load_js('custom.min','assets/build/js'),false);
     set_theme('footerinc',load_js('main'),false);
@@ -148,6 +151,7 @@ function is_logged($redir=true)
     if(!isset($user_status) || $user_status != true)
     {
         $owp->session->sess_destroy();
+        //$owp->session->sess_create();
         if($redir){
             redirect('auth/login');
         }else{
@@ -155,5 +159,94 @@ function is_logged($redir=true)
         }
     }else{
         return true;
+    }
+}
+
+function get_date_br()
+{
+    $semana = array
+    (
+        0 => 'Domingo',
+        1 => 'Segunda-Feira',
+        2 => 'Terça-Feira',
+        3 => 'Quarta-Feira',
+        4 => 'Quinta-Feira',
+        5 => 'Sexta-Feira',
+        6 => 'Sábado'
+    );
+    $mes = array
+    (
+        1 => 'Janeiro',
+        2 => 'Fevereiro',
+        3 => 'Março',
+        4 => 'Abril',
+        5 => 'Maio',
+        6 => 'Junho',
+        7 => 'Julho',
+        8 => 'Agosto',
+        9 => 'Setembro',
+        10 => 'Outubro',
+        11 => 'Novembro',
+        12 => 'Desembro'
+    );
+    $week = $semana[date('w')];
+    $day = date('d');
+    $month = $mes[date('n')];
+    $year = date('Y');
+    return $week . ' , ' . $day . ' de ' . $month . ' de ' . $year;
+}
+
+//Set a message to be show in the next screen of the system
+function set_message($id='error_message', $title=null, $msg=null, $type='error', $position='top-right')
+{
+    $owp =& get_instance();
+    if($title != null && $msg != null)
+    {
+        switch($type)
+        {
+            case 'error':
+                $owp->session->set_flashdata($id,'<span class="hide" id="message" data-message="show" data-type="error" data-message-title="'.$title.'" data-pos="'.$position.'">'.$msg.'</span>');
+                break;
+            case 'success':
+                $owp->session->set_flashdata($id,'<span class="hide" id="message" data-message="show" data-type="success" data-message-title="'.$title.'" data-pos="'.$position.'">'.$msg.'</span>');
+                break;
+            case 'info';
+                $owp->session->set_flashdata($id,'<span class="hide" id="message" data-message="show" data-type="info" data-message-title="'.$title.'" data-pos="'.$position.'">'.$msg.'</span>');
+                break;
+            case 'warning';
+                $owp->session->set_flashdata($id,'<span class="hide" id="message" data-message="show" data-type="warning" data-message-title="'.$title.'" data-pos="'.$position.'">'.$msg.'</span>');
+                break;
+            default:
+                $owp->session->set_flashdata($id,'<span class="hide" id="message" data-message="show" data-type="info" data-message-title="'.$title.'" data-pos="'.$position.'">'.$msg.'</span>');
+                break;
+        }
+    }
+}
+
+// Verify if exists a message and show or get it
+function get_message($id, $show=true)
+{
+    $owp =& get_instance();
+    if($owp->session->flashdata($id))
+    {
+        if($show)
+        {
+            echo $owp->session->flashdata($id);
+            return true;
+        }else{
+            return $owp->session->flashdata($id);
+        }
+    }else{
+        echo '<span class="hide">Não achou nada!</span>';
+        return false;
+    }
+}
+
+function validaemail($email){
+    //verifica se e-mail esta no formato correto de escrita
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+        return true;
+    }else{
+        return false;
     }
 }

@@ -71,8 +71,30 @@ class Auth extends CI_Controller {
             'level_name'    => '',
             'logged'        => false
         ));
-        $this->session->sess_destroy();
+        $this->session->logged = false;
+        //$this->session->sess_destroy();
+        //$this->session->sess_create();
+        set_message('logoff','Até Logo!','Você acabou de sair do sistema! Te aguardamos em breve!','success','bottom-full-width');
         redirect('auth/login');
     }
 
+    public function recovery_password()
+    {
+        $email = $this->input->post('email',true);
+        if(validaemail($email))
+        {
+            $query = $this->users_model->get_by_email($email);
+            if($query->num_rows() == 1)
+            {
+                $new_pwd = substr(str_shuffle('abcdefghijklmnopqrstuvyxwz0123456789'),0,6);
+                $msg = "<p>Você solicitou uma nova senha, a partir de agora use a seguinte senha para acesso: <strong>$new_pwd</strong></p><p>Troque esta senha para uma senha segura e de sua preferência o quanto antes.</p>";
+                if($this->system->send_mail($email, 'Nova Senha | Online Workplace', $msg))
+                {
+                    echo 'senha_recriada';
+                }
+            }
+        }else{
+            echo 'email_invalido';
+        }
+    }
 }

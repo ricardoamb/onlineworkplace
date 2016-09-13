@@ -1,8 +1,39 @@
 <body class="login">
+
+<!-- Modal de Esqueceu Senha -->
+<div class="modal fade modal-forgot" tabindex="0" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-question-circle-o"></i> Esqueci minha senha</h4>
+            </div>
+            <form id="recovery-passwd-form">
+                <div class="modal-body">
+                    <h5>Sem problemas!</h5>
+                    <p><small>Informe seu e-mail para lhe enviarmos uma nova senha.</small></p>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="recovery-email" id="recovery-email" placeholder="E-mail">
+                        <span class="right error-message-recovery hide"></span>
+                    </div>
+                </div>
+                <div class="modal-footer center" style="margin-top:10px;">
+                    <center>
+                        <button type="button" id="recovery-btn" class="btn btn-success"><i class="fa fa-check"></i> Enviar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+                    </center>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Fim Modal Esqueceu Senha -->
+
 <div>
+    <?php get_message('logoff'); ?>
     <a class="hiddenanchor" id="signup"></a>
     <a class="hiddenanchor" id="signin"></a>
-
+    <a class="hiddenanchor" id="forgot"></a>
     <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
@@ -25,7 +56,8 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-dark submit block" id="login-submit" style="margin-top:10px;">Entrar</button>
-                    <a class="reset_pass" href="#" style="font-size:.8em;">Esqueceu sua senha?</a>
+
+                    <a class="reset_pass" data-toggle="modal" data-target=".modal-forgot" style="font-size:.8em;cursor:pointer;">Esqueceu sua senha?</a>
 
                     <div class="clearfix"></div>
 
